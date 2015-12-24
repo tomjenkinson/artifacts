@@ -5,12 +5,12 @@ Pattern: io.narayana.perf.product.*Comparison.*
 Run arguments: -foe -i 1 -wi 4 -f 1 -t 1 -r 100
 Run output:
 "Benchmark","Mode","Threads","Samples","Score","Score Error (99.9%)","Unit"
-"io.narayana.perf.product.AtomikosComparison.test","thrpt",1,1,1088.5415368394888,NaN,"ops/s"
-"io.narayana.perf.product.BitronixComparison.test","thrpt",1,1,1359.1358306505747,NaN,"ops/s"
-"io.narayana.perf.product.GeronimoComparison.test","thrpt",1,1,1343.882236403238,NaN,"ops/s"
-"io.narayana.perf.product.JotmComparison.test","thrpt",1,1,9.831048521620152,NaN,"ops/s"
-"io.narayana.perf.product.NarayanaComparison.test","thrpt",1,1,203.54848798478102,NaN,"ops/s"
-Wed 23 Dec 17:50:58 GMT 2015
+"io.narayana.perf.product.AtomikosComparison.test","thrpt",1,1,1063.1695410088853,NaN,"ops/s"
+"io.narayana.perf.product.BitronixComparison.test","thrpt",1,1,1354.369883102594,NaN,"ops/s"
+"io.narayana.perf.product.GeronimoComparison.test","thrpt",1,1,1280.5862425137154,NaN,"ops/s"
+"io.narayana.perf.product.JotmComparison.test","thrpt",1,1,9.824139959142522,NaN,"ops/s"
+"io.narayana.perf.product.NarayanaComparison.test","thrpt",1,1,201.78954473039857,NaN,"ops/s"
+Wed 23 Dec 18:50:47 GMT 2015
 Processor model name	: Intel(R) Core(TM) i7 CPU         930  @ 2.80GHz
 Number of Cores: 4
 Blog Text
@@ -24,8 +24,10 @@ The benchmark runs a transaction containing two dummy resources.
 We will let the figures speak for themselves, suffice to say that when more and more threads are thrown at the workload we scale better showing that we have excellent control over parallelism. The actual figures are: 
 
 Threads           A           B           C           D    Narayana
-      1 1088.000000 1359.000000 1343.000000    9.000000  203.000000
-     10 1128.000000 2703.000000 7927.000000 6512.000000 1933.000000
-    300  914.000000 2539.00000031018.00000016427.00000049386.000000
+      1 1063.000000 1354.000000 1280.000000    9.000000  201.000000
+     10 1086.000000 2713.000000 7975.000000 7086.000000 1951.000000
+    100  911.000000 2476.00000032691.00000018903.00000019231.000000
+    300  937.000000 2639.00000030078.00000016824.00000045043.000000
+    400  859.000000 2497.00000034364.00000015920.00000049279.000000
 
 GENERATED IMAGE FILE TO /home/hudson/jobs/tm-comparison/workspace/benchmark.png
