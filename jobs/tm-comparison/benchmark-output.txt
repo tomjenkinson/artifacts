@@ -5,12 +5,12 @@ Pattern: io.narayana.perf.product.*Comparison.*
 Run arguments: -foe -i 1 -wi 4 -f 1 -t 1 -r 100
 Run output:
 "Benchmark","Mode","Threads","Samples","Score","Score Error (99.9%)","Unit"
-"io.narayana.perf.product.AtomikosComparison.test","thrpt",1,1,1136.2082907908555,NaN,"ops/s"
-"io.narayana.perf.product.BitronixComparison.test","thrpt",1,1,1349.3156660934899,NaN,"ops/s"
-"io.narayana.perf.product.GeronimoComparison.test","thrpt",1,1,1274.1901828606942,NaN,"ops/s"
-"io.narayana.perf.product.JotmComparison.test","thrpt",1,1,9.830263333421717,NaN,"ops/s"
-"io.narayana.perf.product.NarayanaComparison.test","thrpt",1,1,200.75305712386583,NaN,"ops/s"
-Thu  7 Jan 16:51:12 GMT 2016
+"io.narayana.perf.product.AtomikosComparison.test","thrpt",1,1,1038.2921708144918,NaN,"ops/s"
+"io.narayana.perf.product.BitronixComparison.test","thrpt",1,1,1266.3197615022964,NaN,"ops/s"
+"io.narayana.perf.product.GeronimoComparison.test","thrpt",1,1,1276.5600782681524,NaN,"ops/s"
+"io.narayana.perf.product.JotmComparison.test","thrpt",1,1,9.82856697116905,NaN,"ops/s"
+"io.narayana.perf.product.NarayanaComparison.test","thrpt",1,1,1085.2177812313798,NaN,"ops/s"
+Fri  8 Jan 11:31:46 GMT 2016
 Processor model name	: Intel(R) Core(TM) i7 CPU         930  @ 2.80GHz
 Number of Cores: 4
 Blog Text
@@ -24,10 +24,6 @@ The benchmark runs a transaction containing two dummy resources.
 We will let the figures speak for themselves, suffice to say that when more and more threads are thrown at the workload we scale better showing that we have excellent control over parallelism. The actual figures are: 
 
 Threads           A           B           C           D    Narayana
-      1        1136        1349        1274           9         200
-     10        1099        2645        7303        6689        1983
-     50        1060        2685       33220       15375        9721
-    300         941        2522       31808       16357       47460
-    400         898        2744       29205       16581       47009
+      1        1038        1266        1276           9        1085
 
 GENERATED IMAGE FILE TO /home/hudson/jobs/tm-comparison/workspace/benchmark.png
