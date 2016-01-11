@@ -1,7 +1,42 @@
 JMH Benchmarks Results
+
+Module: ArjunaJTA/jta
+Pattern: io.narayana.perf.product.*Comparison.*
+Run arguments: -foe -i 1 -wi 0 -f 1 -t 10 -r 1
+Run output:
+"Benchmark","Mode","Threads","Samples","Score","Score Error (99.9%)","Unit"
+"io.narayana.perf.product.AtomikosComparison.test","thrpt",10,1,27.76431019061342,NaN,"ops/s"
+"io.narayana.perf.product.BitronixComparison.test","thrpt",10,1,192.93543521737695,NaN,"ops/s"
+"io.narayana.perf.product.GeronimoComparison.test","thrpt",10,1,213.14324251703906,NaN,"ops/s"
+"io.narayana.perf.product.JotmComparison.test","thrpt",10,1,160.221594617922,NaN,"ops/s"
+"io.narayana.perf.product.NarayanaComparison.test","thrpt",10,1,180.3944467910119,NaN,"ops/s"
 JMH Benchmarks Results
-Mon 11 Jan 17:09:31 GMT 2016
+
+Module: ArjunaJTA/jta
+Pattern: io.narayana.perf.product.*Comparison.*
+Run arguments: -foe -i 1 -wi 0 -f 1 -t 1 -r 1
+Run output:
+"Benchmark","Mode","Threads","Samples","Score","Score Error (99.9%)","Unit"
+"io.narayana.perf.product.AtomikosComparison.test","thrpt",1,1,29.43503637570297,NaN,"ops/s"
+"io.narayana.perf.product.BitronixComparison.test","thrpt",1,1,71.65634814788037,NaN,"ops/s"
+"io.narayana.perf.product.GeronimoComparison.test","thrpt",1,1,29.011822993301273,NaN,"ops/s"
+"io.narayana.perf.product.JotmComparison.test","thrpt",1,1,5.187727746273673,NaN,"ops/s"
+"io.narayana.perf.product.NarayanaComparison.test","thrpt",1,1,119.17129613045049,NaN,"ops/s"
+Mon 11 Jan 17:17:00 GMT 2016
 Processor model name	: QEMU Virtual CPU version 1.5.3
 Number of Cores: 2
 Blog Text
 =========
+In this release we compare ourselves against four other leading open source competitor products with a view to checking that the release remains competitive. Results are produced using JMH (a micro benchmark harness created by the OpenJDK project team available from http://openjdk.java.net/projects/code-tools/jmh/). 
+
+We have attempted to configure each product on an equal footing by choosing sensible defaults for each tunable parameter and by ensuring that recovery is enabled, although we do configure narayana with the journal store, which is our best performing transaction log storage mechanism. If you have any recommendations for other transaction managers or how to tune the configuration then please let us know so that we can update our test job. 
+
+The benchmark runs a transaction containing two dummy resources.
+
+We will let the figures speak for themselves, suffice to say that when more and more threads are thrown at the workload we scale better showing that we have excellent control over parallelism. The actual figures are: 
+
+Threads           A           B           C           D    Narayana
+      1          29          71          29           5         119
+     10          27         192         213         160         180
+
+GENERATED IMAGE FILE TO /home/hudson/workspace/tm-comparison/benchmark.png
